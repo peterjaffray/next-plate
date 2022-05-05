@@ -1,0 +1,88 @@
+{
+	"name": "next-plate",
+	"version": "1.9.0",
+	"private": true,
+	"author": "Gustavo Matheus <gustavo.morinaga27@gmail.com>",
+	"description": "A super template for Next.js with a pack of incredible tools",
+	"lint-staged": {
+		"src/**/*.+(js|jsx|ts|tsx|json|md)": [
+			"yarn lint:fix"
+		]
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"scripts": {
+		"dev": "next dev",
+		"start": "next start",
+		"build": "next build",
+		"lint": "next lint",
+		"lint:fix": "eslint src --fix && yarn format",
+		"test": "jest",
+		"test:watch": "jest --watch",
+		"type-check": "tsc --noEmit",
+		"format": "prettier --write src",
+		"up": "yarn upgrade-interactive",
+		"up-latest": "yarn up --latest",
+		"release": "standard-version",
+		"release-as-major": "yarn release --release-as major",
+		"release-as-minor": "yarn release --release-as minor",
+		"release-as-patch": "yarn release --release-as patch",
+		"push-release": "git push --follow-tags origin main",
+		"pull": "git rebase origin main -i",
+		"pre-commit": "yarn lint",
+		"postbuild": "next-sitemap --config next-sitemap.config.js",
+		"prepare": "husky install"
+	},
+	"dependencies": {
+		"@chakra-ui/icons": "1.1.7",
+		"@chakra-ui/react": "1.8.8",
+		"@emotion/react": "11.9.0",
+		"@emotion/styled": "11.8.1",
+		"@hookform/resolvers": "2.8.8",
+		"axios": "0.27.2",
+		"framer-motion": "6.3.3",
+		"next": "12.1.5",
+		"next-compose-plugins": "2.2.1",
+		"next-images": "1.8.4",
+		"next-pwa": "5.5.2",
+		"next-seo": "5.4.0",
+		"react": "18.1.0",
+		"react-dom": "18.1.0",
+		"react-hook-form": "7.30.0",
+		"react-icons": "4.3.1",
+		"react-query": "3.38.1",
+		"sharp": "0.30.4",
+		"yup": "0.32.11",
+		"zustand": "3.7.2"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "16.2.4",
+		"@commitlint/config-conventional": "16.2.4",
+		"@next/eslint-plugin-next": "12.1.5",
+		"@testing-library/jest-dom": "5.16.4",
+		"@testing-library/react": "13.1.1",
+		"@testing-library/user-event": "14.1.1",
+		"@types/jest": "27.4.1",
+		"@types/node": "17.0.21",
+		"@types/react": "17.0.44",
+		"@typescript-eslint/eslint-plugin": "5.21.0",
+		"@typescript-eslint/parser": "5.21.0",
+		"@welldone-software/why-did-you-render": "7.0.1",
+		"eslint": "8.14.0",
+		"eslint-config-next": "12.1.5",
+		"eslint-config-prettier": "8.5.0",
+		"eslint-plugin-jest": "26.1.5",
+		"eslint-plugin-prettier": "4.0.0",
+		"eslint-plugin-testing-library": "5.3.1",
+		"husky": "7.0.4",
+		"jest": "27.5.1",
+		"lint-staged": "12.4.1",
+		"next-sitemap": "2.5.20",
+		"prettier": "2.6.2",
+		"standard-version": "9.3.2",
+		"typescript": "4.6.4"
+	}
+}
